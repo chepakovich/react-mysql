@@ -26,6 +26,7 @@ class Performance extends Component {
     EmployeeService.updatePerformance(this.state.targetEmployee.id, this.state.feedback)
       .then(response => {
         alert('Performance review has been updated')
+        window.location.href='../employees';
       })
     event.preventDefault()
   }
@@ -38,17 +39,18 @@ class Performance extends Component {
     const targetEmployee = this.state.targetEmployee || {}
     return (
       <Layout>
-        <h2>Performance review</h2>
+        <div class="page-data">
+          <h2>Performance review for "{targetEmployee.name}"</h2>
 
-        <form onSubmit={this.handleSubmit} className='column is-half'>
-          <div className="field">
-            <label className='label'>Create/edit performance review of {targetEmployee.name}</label>
-            <textarea onChange={this.handleChange} className='textarea' placeholder='Write performance review here'></textarea>
-          </div>         
-          <div className='buttons is-right'>
-            <button className='button is-primary'>Submit</button>
-          </div>
-        </form>
+          <form onSubmit={this.handleSubmit}>
+
+              Create/edit performance review:<br />
+              <textarea rows="10" cols="120" onChange={this.handleChange} placeholder='Write performance review here'></textarea>        
+            <div class="data-btn">
+              <button>Submit</button>
+            </div>
+          </form>
+        </div>
       </Layout>
     )
   }

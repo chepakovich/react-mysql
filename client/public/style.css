@@ -1,6 +1,6 @@
 body {
     margin:0;
-    font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
     background:#eee;
     width:100%;
     height:100%;
@@ -28,7 +28,7 @@ a {
 }
 .data-btn{}
 .data-btn button{
-    padding:10px 20px;background:#FF9900;border:1px solid #fff;
+    padding:10px 40px;background:#FF9900;border:1px solid #fff;
     color:#FEFFFD;font-weight:bold;
     font-size: 20px;
 }
@@ -57,7 +57,12 @@ input {
     font-size: 22px;
 }
 
-textarea{ border:1px solid #ddd;width:296px;}
+textarea{
+    border:1px solid grey;
+    margin: 5px 0;
+    padding:8px;
+    font-size: 18px;
+}
 .label{font-weight:bold;}
 
 #footer{margin-left:82%;margin-top:10%}

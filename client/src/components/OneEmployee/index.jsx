@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Layout from '../../shared/Layout'
 import * as EmployeeService from '../../shared/EmployeeService'
 
@@ -25,6 +23,7 @@ class OneEmployee extends Component {
     EmployeeService.editEmployee(this.state.targetEmployee.id, this.state.feedback)
       .then(response => {
         alert('Employee name has been updated')
+        window.location.href='../employees';
       })
     event.preventDefault()
   }
@@ -37,17 +36,17 @@ class OneEmployee extends Component {
     const targetEmployee = this.state.targetEmployee || {}
     return (
       <Layout>
-        <h2>Edit employee</h2>
-        <form onSubmit={this.handleSubmit} className='column is-half'>
-          <div className="field">
-            <label className='label'>Employee ID: {targetEmployee.id}</label>
-            <p>Employee name:</p>
-            <input type="text" onChange={this.handleChange} className='text' placeholder={targetEmployee.name} />
-          </div>         
-          <div className='buttons is-right'>
-            <button className='button is-primary'>Submit</button>
-          </div>
-        </form>
+        <div class="data-table">
+          <h2>Edit employee "{targetEmployee.name}"</h2>
+          <h3>Employee ID: {targetEmployee.id}</h3>
+          <form onSubmit={this.handleSubmit}>
+            Edit employee name:<br />
+            <input type="text" onChange={this.handleChange} placeholder={targetEmployee.name} />        
+            <div class="data-btn">
+              <button>Submit</button>
+            </div>
+          </form>
+        </div>
       </Layout>
     )
   }
