@@ -94,6 +94,7 @@ function routes (app) {
 
 
   // Delete employee
+  console.log('Deleting employee...')
   app.get('/deleteemployee/:id', (req, res) => {
     let sql = `DELETE FROM employees WHERE id = ${req.params.id}`
     let query = db.query(sql, (err, result) => {
@@ -101,40 +102,8 @@ function routes (app) {
       console.log(result)
       res.send('Employee deleted...')
     })
-    const userid = req.headers.userid
-    res.send(feedback[userid] || [])
   })
 
-
-
-  app.get('/reviews', (req, res) => {
-    // todo: auth and err handling
-    const userid = req.headers.userid
-    res.send(reviews[userid])
-  })
-  
-  app.put('/reviews', (req, res) => {
-    // todo: auth and err handling
-    const userid = req.headers.userid
-    reviews[userid] = req.body
-    res.send(reviews[userid])
-  })
-
-  app.get('/reviews/feedback', (req, res) => {
-    // todo: auth and err handling
-    const userid = req.headers.userid
-    res.send(feedback[userid] || [])
-  })
-
-  // cleanup
-  app.post('/reviews/:userid/feedback', (req, res) => {
-    const targetUserid = req.params.userid
-    const data = req.body
-    data.from = users.find(u => u.id == data.from).name
-    feedback[targetUserid].push(data)
-    
-    res.send(feedback[targetUserid] || [])
-  })
 }
 
 module.exports = routes

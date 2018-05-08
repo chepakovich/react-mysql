@@ -15,6 +15,14 @@ export function editEmployee (targetUserid, feedback) {
   return axios.post(api_base + '/editemployee', data)
 }
 
+export function deleteEmployee (targetUserid) {
+  const data = {
+    userid: targetUserid
+  }
+  //alert(targetUserid)
+  return axios.get(api_base + `/deleteemployee/${targetUserid}`)
+}
+
 export function addEmployee (feedback) {
   const data = {
     newname: feedback
@@ -39,46 +47,3 @@ export function getPerformanceReview (targetUserid, feedback) {
   alert(targetUserid)
   return axios.put(api_base + '/getperformance/1')
 }
-
-
-
-export function deleteEmployee () {
-  const userid = AuthService.getCurrentUser()
-  return axios.put(api_base + '/deletemployee' + {userid})
-}
-
-
-
-
-export function getReview () {
-  const userid = AuthService.getCurrentUser()
-  const headers = {userid}
-  return axios.get(api_base + '/reviews', {headers})
-}
-
-
-
-export function getFeedback () {
-  const userid = AuthService.getCurrentUser()
-  const headers = {userid}
-  return axios.get(api_base + '/reviews/feedback', {headers})
-}
-
-export function createFeedback (targetUserid, feedback) {
-  const userid = AuthService.getCurrentUser()
-  const headers = {userid}
-  const data = {
-    from: userid,
-    text: feedback
-  }
-  return axios.post(api_base + `/reviews/${targetUserid}/feedback`, data, {headers})
-}
-
-
-// TO BE DELETED:
-export function updateReview (data) {
-  const userid = AuthService.getCurrentUser()
-  const headers = {userid}
-  return axios.put(api_base + '/reviews', data, {headers})
-}
-

@@ -26,7 +26,7 @@ The application needs both the server and the client to run concurrently. In the
 - Import to install on your local machine the MySQL database (included in the clone/download package)
 
 ### Server
-- Make sure that in file 'server/src/endpoints.js' an appropriate socket is specified for the database connection (`const db`). Currently there there is the socket for MAMP - `socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'`
+- Make sure that in the file 'server/src/endpoints.js' an appropriate socket is specified for the database connection (`const db`). Currently there is the socket for MAMP - `socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'`
 - Change to the `server` directory
 - run `npm install` to install dependencies
 - run `npm start` to run the server at http://localhost:3001

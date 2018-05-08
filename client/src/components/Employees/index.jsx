@@ -39,7 +39,7 @@ class Employees extends Component {
                       <th>Name</th>
                       <th>Edit Employee</th>
                       <th>Performance Review</th>
-                      <th width="200px">Action</th>
+                      <th>Delete Employee</th>
                   </tr>
                 {this.state.employees.map(e => {
                   return (
@@ -48,7 +48,7 @@ class Employees extends Component {
                         <th>{e.name}</th>
                         <th><Link to={`/employee/${e.id}`}>edit employee</Link></th>
                         <th><Link to={`/performance/${e.id}`}>performance review</Link></th>
-                        <th></th>
+                        <th><Link to={`/delemployee/${e.id}`}>delete employee</Link></th>
                     </tr>
                   )
                 })}
