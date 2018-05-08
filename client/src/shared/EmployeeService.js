@@ -39,11 +39,10 @@ export function updatePerformance (targetUserid, feedback) {
   return axios.post(api_base + '/performance', data)
 }
 
-export function getPerformanceReview (targetUserid, feedback) {
+export function getPerformanceReview (targetUserid) {
   const data = {
-    userid: targetUserid,
-    content: feedback
+    userid: targetUserid
   }
   alert(targetUserid)
-  return axios.put(api_base + '/getperformance/1')
+  return axios.get(api_base + `/getperformance/${targetUserid}`)
 }

@@ -15,12 +15,15 @@ class Performance extends Component {
       EmployeeService.getEmployees()
         .then(({data}) => {
           const targetEmployee = data.find(u => u.id === +params.userid)
-          this.setState({targetEmployee})
-        })      
-      //EmployeeService.getPerformanceReview(this.state.targetEmployee.id, 'test')
-      //  .then(({data}) => this.setState({performance: data}))
+          //this.setState({targetEmployee})
+        })
+        //.then (alert(this.state.targetEmployee.id))
+      //EmployeeService.getPerformanceReview(this.state.targetEmployee.id)
+        //.then(({data}) => this.setState({performance: data}))
     }
   }
+
+
 
   handleSubmit = (event) => {
     EmployeeService.updatePerformance(this.state.targetEmployee.id, this.state.feedback)

@@ -44,11 +44,11 @@ class Employees extends Component {
                 {this.state.employees.map(e => {
                   return (
                     <tr>
-                        <th>{e.id}</th>
-                        <th>{e.name}</th>
-                        <th><Link to={`/employee/${e.id}`}>edit employee</Link></th>
-                        <th><Link to={`/performance/${e.id}`}>performance review</Link></th>
-                        <th><Link to={`/delemployee/${e.id}`}>delete employee</Link></th>
+                        <td>{e.id}</td>
+                        <td>{e.name}</td>
+                        <td><Link to={`/employee/${e.id}`}>edit employee</Link></td>
+                        <td><Link to={`/performance/${e.id}`}>performance review</Link></td>
+                        <td><Link to={`/delemployee/${e.id}`}>delete employee</Link></td>
                     </tr>
                   )
                 })}

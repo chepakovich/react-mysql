@@ -84,7 +84,7 @@ function routes (app) {
   // Get performance review
   console.log('Getting performance review...')
   app.get('/getperformance/:id', (req, res) => {
-    let sql = `SELECT * FROM performreview WHERE id = ${req.params.id}`
+    let sql = `SELECT * FROM performreview WHERE refid = ${req.params.id}`
     let query = db.query(sql, (err, result) => {
       if(err) throw err
       console.log(result)

@@ -12,6 +12,7 @@ a {
 
 #wrapper{     
     margin-top:30px;
+    margin-bottom:30px;
     width:90%;
     min-height:600px;
     margin-left:5%;
@@ -34,7 +35,7 @@ a {
 }
 .data-btn button:hover {background-color: rgb(187, 113, 1);}
 
-.data-table{}
+.data-table{font-weight: bold; text-align: center;}
 .data-table table{border-collapse:collapse;border:1px solid #ddd;width:100%}
 .a-inside{padding:4px 10px;border:1px solid #fff;text-decoration:none;}
 .a-inside.edit{background-color:#00CC00;color:#fff;}
@@ -43,7 +44,8 @@ a {
 input[type="text"]{
     border:1px solid #ddd;
     height:26px;
-    width:400px;
+    width:300px;
+    text-align: center;
 }
 .cancel{
     background-color:#D23641;color:#fff;
@@ -64,5 +66,6 @@ textarea{
     font-size: 18px;
 }
 .label{font-weight:bold;}
+th {background-color: rgb(240, 234, 226);}
 
 #footer{margin-left:82%;margin-top:10%}

@@ -11,6 +11,11 @@ The application is a basic employee performance review tool. It has the followin
 - Add/remove/update/view employees
 - Add/update/view performance reviews
 
+Here is a screenshot of the "Employees" page:
+<p align="center">
+  <img src="screenshot.png" width="350"/>
+</p>
+
 ### Technology used
 - React on the client side
 - Node.js/Express on the server side
@@ -24,6 +29,23 @@ The application needs both the server and the client to run concurrently. In the
 
 ### MySQL database
 - Import to install on your local machine the MySQL database (included in the clone/download package)
+- Alternatively, create a database `react_node` and the following tables in it:
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `employees` (
+  `id` int(11) NOT NULL,
+  `adminId` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `performreview` (
+  `id` int(11) NOT NULL,
+  `refid` int(11) NOT NULL,
+  `content` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ### Server
 - Make sure that in the file 'server/src/endpoints.js' an appropriate socket is specified for the database connection (`const db`). Currently there is the socket for MAMP - `socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'`
