@@ -1,7 +1,7 @@
+const mysql = require('mysql')
 const users = require('./seed-data/users')
 const assessment = require('./seed-data/assessment')
 const feedback = require('./seed-data/feedback')
-const mysql = require('mysql')
 
 // Create MySQL connection
 const db = mysql.createConnection({

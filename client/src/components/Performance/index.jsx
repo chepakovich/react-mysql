@@ -45,7 +45,7 @@ class Performance extends Component {
           <form onSubmit={this.handleSubmit}>
 
               Create/edit performance review:<br />
-              <textarea rows="10" cols="120" onChange={this.handleChange} placeholder='Write performance review here'></textarea>        
+              <textarea rows="10" cols="80" onChange={this.handleChange} placeholder='Write performance review here'></textarea>        
             <div class="data-btn">
               <button>Submit</button>
             </div>
