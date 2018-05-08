@@ -13,7 +13,7 @@ The application is a basic employee performance review tool. It has the followin
 
 Here is a screenshot of the "Employees" page:
 <p align="center">
-  <img src="screenshot.png" width="350"/>
+  <img src="screenshot.png" width="500"/>
 </p>
 
 ### Technology used
@@ -30,6 +30,7 @@ The application needs both the server and the client to run concurrently. In the
 ### MySQL database
 - Import to install on your local machine the MySQL database (included in the clone/download package)
 - Alternatively, create a database `react_node` and the following tables in it:
+
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL
