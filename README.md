@@ -1,5 +1,4 @@
 # React - Node/Express - MySQL Demo
----
 
 ## Description of the application
 ### Basic structure
